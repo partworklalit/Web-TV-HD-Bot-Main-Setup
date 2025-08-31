@@ -1,8 +1,9 @@
-from fastapi import FastAPI
-from fastapi.responses import JSONResponse
+from http.server import BaseHTTPRequestHandler
 
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Hello, API is working!"}
+class handler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
+        self.wfile.write(b"Hello World from Vercel + Python!")
+        return
