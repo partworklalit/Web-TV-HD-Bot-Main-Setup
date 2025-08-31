@@ -2,3 +2,4 @@ python-telegram-bot==13.15
 Flask>=2.2,<4
 pymongo[srv]>=4.7,<5
 urllib3<2
+requests
